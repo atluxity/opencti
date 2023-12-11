@@ -857,6 +857,7 @@ export type AttributeColumn = {
 
 export type AttributeColumnConfiguration = {
   __typename?: 'AttributeColumnConfiguration';
+  default_value?: Maybe<Scalars['String']['output']>;
   pattern_date?: Maybe<Scalars['String']['output']>;
   separator?: Maybe<Scalars['String']['output']>;
   timezone?: Maybe<Scalars['String']['output']>;
@@ -25162,6 +25163,7 @@ export enum TriggersOrdering {
 export type TypeAttribute = {
   __typename?: 'TypeAttribute';
   defaultValues?: Maybe<Array<DefaultValue>>;
+  editDefault: Scalars['Boolean']['output'];
   label?: Maybe<Scalars['String']['output']>;
   mandatory: Scalars['Boolean']['output'];
   mandatoryType: Scalars['String']['output'];
@@ -28891,6 +28893,7 @@ export type AttributeColumnResolvers<ContextType = any, ParentType extends Resol
 }>;
 
 export type AttributeColumnConfigurationResolvers<ContextType = any, ParentType extends ResolversParentTypes['AttributeColumnConfiguration'] = ResolversParentTypes['AttributeColumnConfiguration']> = ResolversObject<{
+  default_value?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   pattern_date?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   separator?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   timezone?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -36103,6 +36106,7 @@ export type TriggerEdgeResolvers<ContextType = any, ParentType extends Resolvers
 
 export type TypeAttributeResolvers<ContextType = any, ParentType extends ResolversParentTypes['TypeAttribute'] = ResolversParentTypes['TypeAttribute']> = ResolversObject<{
   defaultValues?: Resolver<Maybe<Array<ResolversTypes['DefaultValue']>>, ParentType, ContextType>;
+  editDefault?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   mandatory?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   mandatoryType?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
