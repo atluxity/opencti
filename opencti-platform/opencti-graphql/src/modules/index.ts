@@ -50,6 +50,7 @@ import './playbook/playbook';
 import './ingestion/ingestion-rss';
 import './ingestion/ingestion-taxii';
 import './indicator/indicator';
+import './ingestion/ingestion-csv';
 import './organization/organization';
 import './internal/csvMapper/csvMapper';
 import './internal/document/document';
