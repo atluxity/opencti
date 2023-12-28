@@ -857,7 +857,6 @@ export type AttributeColumn = {
 
 export type AttributeColumnConfiguration = {
   __typename?: 'AttributeColumnConfiguration';
-  default_values?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   pattern_date?: Maybe<Scalars['String']['output']>;
   separator?: Maybe<Scalars['String']['output']>;
   timezone?: Maybe<Scalars['String']['output']>;
@@ -4640,6 +4639,7 @@ export type CsvMapperRepresentationAttribute = {
   __typename?: 'CsvMapperRepresentationAttribute';
   based_on?: Maybe<AttributeBasedOn>;
   column?: Maybe<AttributeColumn>;
+  default_values?: Maybe<Array<DefaultValue>>;
   key: Scalars['String']['output'];
   ref?: Maybe<AttributeRef>;
 };
@@ -28893,7 +28893,6 @@ export type AttributeColumnResolvers<ContextType = any, ParentType extends Resol
 }>;
 
 export type AttributeColumnConfigurationResolvers<ContextType = any, ParentType extends ResolversParentTypes['AttributeColumnConfiguration'] = ResolversParentTypes['AttributeColumnConfiguration']> = ResolversObject<{
-  default_values?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   pattern_date?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   separator?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   timezone?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -30100,6 +30099,7 @@ export type CsvMapperRepresentationResolvers<ContextType = any, ParentType exten
 export type CsvMapperRepresentationAttributeResolvers<ContextType = any, ParentType extends ResolversParentTypes['CsvMapperRepresentationAttribute'] = ResolversParentTypes['CsvMapperRepresentationAttribute']> = ResolversObject<{
   based_on?: Resolver<Maybe<ResolversTypes['AttributeBasedOn']>, ParentType, ContextType>;
   column?: Resolver<Maybe<ResolversTypes['AttributeColumn']>, ParentType, ContextType>;
+  default_values?: Resolver<Maybe<Array<ResolversTypes['DefaultValue']>>, ParentType, ContextType>;
   key?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   ref?: Resolver<Maybe<ResolversTypes['AttributeRef']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
