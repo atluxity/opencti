@@ -73,6 +73,24 @@ const INDICATOR_DEFINITION: ModuleDefinition<StoreEntityIndicator, StixIndicator
       upsert: true,
       label: 'Score'
     },
+    {
+      name: 'x_opencti_base_score',
+      type: 'numeric',
+      mandatoryType: 'no',
+      editDefault: true,
+      multiple: false,
+      upsert: true,
+      label: 'Base score'
+    },
+    {
+      name: 'x_opencti_decay_history',
+      type: 'object',
+      mandatoryType: 'no',
+      editDefault: false,
+      multiple: true,
+      upsert: true,
+      label: 'Decay history'
+    },
     { name: 'x_opencti_detection', type: 'boolean', mandatoryType: 'no', editDefault: false, multiple: false, upsert: true },
     {
       name: 'x_opencti_main_observable_type',
