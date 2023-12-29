@@ -35,9 +35,9 @@ const FEEDBACK_DEFINITION: ModuleDefinition<StoreEntityFeedback, StixFeedback> =
   ],
   relations: [],
   relationsRefs: [
-    { ...createdBy, mandatoryType: 'no' },
-    { ...objectMarking, mandatoryType: 'no' },
-    { ...objectAssignee, mandatoryType: 'no' },
+    { ...createdBy, mandatoryType: 'no', editDefault: false },
+    { ...objectMarking, mandatoryType: 'no', editDefault: false },
+    { ...objectAssignee, mandatoryType: 'no', editDefault: false },
   ],
   representative: (stix: StixFeedback) => {
     return stix.name;
