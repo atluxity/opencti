@@ -33,7 +33,8 @@ const StixCoreObjectsExportsContentComponent = ({
       subscription.unsubscribe();
     };
   });
-  const stixCoreObjectsExportFiles = data?.stixCoreObjectsExportFiles?.edges ?? [];
+  const stixCoreObjectsExportFiles = [...(data?.stixCoreObjectsExportFiles?.edges ?? [])]
+    .sort((f1, f2) => f2?.node?.lastModified?.localeCompare(f1?.node?.lastModified));
   let paginationOptionsForExport = { ...paginationOptions }; // paginationsOptions with correct types filters
   if (paginationOptions?.filters && paginationOptions?.types && paginationOptions.types.length > 0) {
     paginationOptionsForExport = {
@@ -111,6 +112,7 @@ export default createRefetchContainer(
           edges {
             node {
               id
+              lastModified
               ...FileLine_file
             }
           }

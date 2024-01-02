@@ -71,11 +71,11 @@ class StixCoreRelationshipsExportsContentComponent extends Component {
       handleToggle,
       context,
     } = this.props;
-    const stixCoreRelationshipsExportFiles = pathOr(
+    const stixCoreRelationshipsExportFiles = [...pathOr(
       [],
       ['stixCoreRelationshipsExportFiles', 'edges'],
       data,
-    );
+    )].sort((f1, f2) => f2?.node?.lastModified?.localeCompare(f1?.node?.lastModified));
     return (
       <div>
         <div className={classes.header}>
@@ -157,6 +157,7 @@ const StixCoreRelationshipsExportsContent = createRefetchContainer(
           edges {
             node {
               id
+              lastModified
               ...FileLine_file
             }
           }

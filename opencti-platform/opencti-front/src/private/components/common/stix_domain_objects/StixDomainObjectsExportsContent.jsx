@@ -37,7 +37,8 @@ class StixDomainObjectsExportsContentComponent extends Component {
 
   render() {
     const { t, data, exportEntityType, paginationOptions, context } = this.props;
-    const stixDomainObjectsExportFiles = data?.stixDomainObjectsExportFiles?.edges ?? [];
+    const stixDomainObjectsExportFiles = [...(data?.stixDomainObjectsExportFiles?.edges ?? [])]
+      .sort((f1, f2) => f2?.node?.lastModified?.localeCompare(f1?.node?.lastModified));
     let paginationOptionsForExport = { ...paginationOptions }; // paginationsOptions with correct elementId
     if (paginationOptions?.fromId) {
       // for relationships contained in entity>Knowledge>Sightings
@@ -130,6 +131,7 @@ const StixDomainObjectsExportsContent = createRefetchContainer(
           edges {
             node {
               id
+              lastModified
               ...FileLine_file
             }
           }

@@ -63,11 +63,11 @@ class StixCyberObservablesExportsContentComponent extends Component {
 
   render() {
     const { classes, t, data, paginationOptions, handleToggle, context } = this.props;
-    const stixCyberObservablesExportFiles = pathOr(
+    const stixCyberObservablesExportFiles = [...pathOr(
       [],
       ['stixCyberObservablesExportFiles', 'edges'],
       data,
-    );
+    )].sort((f1, f2) => f2?.node?.lastModified?.localeCompare(f1?.node?.lastModified));
     return (
       <div>
         <div className={classes.header}>
@@ -147,6 +147,7 @@ const StixCyberObservablesExportsContent = createRefetchContainer(
           edges {
             node {
               id
+              lastModified
               ...FileLine_file
             }
           }
