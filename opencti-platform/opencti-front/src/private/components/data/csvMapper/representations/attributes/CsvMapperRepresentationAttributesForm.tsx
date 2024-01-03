@@ -44,6 +44,17 @@ CsvMapperRepresentationAttributesFormProps
     schemaAttributesQuery,
     queryRef,
   );
+  console.log('schema', schemaAttributes);
+  const hashesAttributes = schemaAttributes.find((a) => a.name === 'hashes');
+
+  if (hashesAttributes) {
+    const mutableSchemaAttributes = schemaAttributes.slice();
+    const indexToReplace = mutableSchemaAttributes.findIndex((a) => a.name === 'hashes');
+    if (indexToReplace !== -1) {
+      mutableSchemaAttributes.splice(indexToReplace, 1);
+      console.log('mutableSchemaAttributes2', mutableSchemaAttributes);
+    }
+  }
 
   if (representation.target_type === null) {
     // if the entity type gets unset, we display nothing
