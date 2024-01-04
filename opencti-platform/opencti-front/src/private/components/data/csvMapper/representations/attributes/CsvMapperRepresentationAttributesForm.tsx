@@ -40,7 +40,7 @@ CsvMapperRepresentationAttributesFormProps
 
   // some fields are not present in the csv mapper but in the schema
   // we enhance these attributes with the schema data, to use in our form
-  const { schemaAttributes } = usePreloadedQuery<CsvMapperRepresentationAttributesFormQuery>(
+  let { schemaAttributes } = usePreloadedQuery<CsvMapperRepresentationAttributesFormQuery>(
     schemaAttributesQuery,
     queryRef,
   );
@@ -53,6 +53,45 @@ CsvMapperRepresentationAttributesFormProps
     if (indexToReplace !== -1) {
       mutableSchemaAttributes.splice(indexToReplace, 1);
       console.log('mutableSchemaAttributes2', mutableSchemaAttributes);
+      mutableSchemaAttributes.push(
+        {
+          defaultValues: [],
+          editDefault: false,
+          name: 'hashes_MD5',
+          mandatory: false,
+          multiple: false,
+          label: null,
+          type: 'string',
+        },
+        {
+          defaultValues: [],
+          editDefault: false,
+          name: 'hashes_SHA-256',
+          mandatory: false,
+          multiple: false,
+          label: null,
+          type: 'string',
+        },
+        {
+          defaultValues: [],
+          editDefault: false,
+          name: 'hashes_SHA-1',
+          mandatory: false,
+          multiple: false,
+          label: null,
+          type: 'string',
+        },
+        {
+          defaultValues: [],
+          editDefault: false,
+          name: 'hashes_SHA-512',
+          mandatory: false,
+          multiple: false,
+          label: null,
+          type: 'string',
+        },
+      );
+      schemaAttributes = mutableSchemaAttributes;
     }
   }
 
