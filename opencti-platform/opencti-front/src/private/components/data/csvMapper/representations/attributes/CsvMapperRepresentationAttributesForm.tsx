@@ -44,47 +44,39 @@ CsvMapperRepresentationAttributesFormProps
     schemaAttributesQuery,
     queryRef,
   );
-  console.log('schema', schemaAttributes);
   const hashesAttributes = schemaAttributes.find((a) => a.name === 'hashes');
 
   if (hashesAttributes) {
     const mutableSchemaAttributes = schemaAttributes.slice();
     const indexToReplace = mutableSchemaAttributes.findIndex((a) => a.name === 'hashes');
+
     if (indexToReplace !== -1) {
-      mutableSchemaAttributes.splice(indexToReplace, 1);
-      console.log('mutableSchemaAttributes2', mutableSchemaAttributes);
-      mutableSchemaAttributes.push(
+      mutableSchemaAttributes.splice(
+        indexToReplace,
+        1,
         {
-          defaultValues: [],
-          editDefault: false,
-          name: 'hashes_MD5',
+          name: 'MD5',
           mandatory: false,
           multiple: false,
           label: null,
           type: 'string',
         },
         {
-          defaultValues: [],
-          editDefault: false,
-          name: 'hashes_SHA-256',
+          name: 'SHA_256',
           mandatory: false,
           multiple: false,
           label: null,
           type: 'string',
         },
         {
-          defaultValues: [],
-          editDefault: false,
-          name: 'hashes_SHA-1',
+          name: 'SHA-1',
           mandatory: false,
           multiple: false,
           label: null,
           type: 'string',
         },
         {
-          defaultValues: [],
-          editDefault: false,
-          name: 'hashes_SHA-512',
+          name: 'SHA-512',
           mandatory: false,
           multiple: false,
           label: null,
