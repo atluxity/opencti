@@ -8602,7 +8602,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:2.30.0, date-fns@npm:^2.19.0":
+"date-fns@npm:3.1.0":
+  version: 3.1.0
+  resolution: "date-fns@npm:3.1.0"
+  checksum: 8de5474a0e5a4b9901547f0eb572b0ae8b3027d6d8117053d9b258000a4350b673f03c847211f6dfee316c39a1df30e1ea0f85efd475ef90764c0c3d18aabed3
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.19.0":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:
@@ -15011,7 +15018,7 @@ __metadata:
     d3-hierarchy: 3.1.2
     d3-timer: 3.0.1
     dagre: 0.8.5
-    date-fns: 2.30.0
+    date-fns: 3.1.0
     esbuild: 0.19.11
     esbuild-jest: 0.5.0
     eslint: 8.54.0
